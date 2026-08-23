@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "core-community",
+    "enterprise-ext"
+]
+resolver = "2"
