@@ -1,0 +1,25 @@
+[package]
+name = "mobilearmor-core"
+version = "0.1.0"
+edition = "2021"
+authors = ["Emirhan CAMCI <byemir@live.com>"]
+license = "AGPL-3.0"
+description = "Zero-Trust Mobile Security Core SDK (Community Edition)"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+uniffi = "0.28"
+thiserror = "1.0"
+obfstr = "0.4"
+
+[build-dependencies]
+uniffi = { version = "0.28", features = ["build"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = "symbols"
+panic = "abort"
